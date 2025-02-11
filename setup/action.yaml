@@ -29,6 +29,7 @@ runs:
           check-latest: true
 
       - name: Build
+        shell: bash
         run: |
           go build -o ${{ inputs.install-dir }}/bnd
 
