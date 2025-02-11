@@ -33,7 +33,7 @@ runs:
         shell: bash
         run: |
           mkdir -p ${{ inputs.install-dir }}/bin || :
-          go build -o ${{ inputs.install-dir }}/bin/bnd .build/bnd
+          cd .build/bnd && go build -o ${{ inputs.install-dir }}/bin/bnd .
 
       - if: ${{ runner.os == 'Linux' || runner.os == 'macOS' }}
         run: echo "${{ inputs.install-dir }}/bin" >> $GITHUB_PATH
